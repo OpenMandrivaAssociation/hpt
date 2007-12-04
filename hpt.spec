@@ -2,7 +2,7 @@
 %define version 1.4.0
 %define preversion rc2
 
-%define rel 3mdk
+%define rel  %mkrel 
 %define release 0.%{preversion}.%rel
 
 Summary:	Highly Portable FTN Message Tosser
