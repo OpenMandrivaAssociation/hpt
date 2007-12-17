@@ -12,7 +12,6 @@ Release:        %{release}
 License:	GPL
 Group:		Networking/Other
 Source:		%{name}-%{version}%{preversion}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 Patch0:		hpt-20021015-main.patch.bz2
 Patch1:		hpt-20021015-doc.patch.bz2
 Requires:	fidoconf
