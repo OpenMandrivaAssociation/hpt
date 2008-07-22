@@ -3,7 +3,7 @@
 %define preversion rc2
 
 %define rel  %mkrel 
-%define release 0.%{preversion}.%rel
+1%define release 0.%{preversion}.%rel
 
 Summary:	Highly Portable FTN Message Tosser
 Name:           %{name}
