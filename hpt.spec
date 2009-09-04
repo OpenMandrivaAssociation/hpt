@@ -1,7 +1,7 @@
 %define fver	1.4
 
 %define pre	rc5
-%define rel	1
+%define rel	2
 %define release	0.%{pre}.%{rel}
 
 Summary:	Highly Portable FTN Message Tosser
