@@ -1,0 +1,11 @@
+--- hpt/Makefile-old	Mon Jan 28 00:48:24 2002
++++ hpt/Makefile	Sat May 18 03:57:31 2002
+@@ -3,7 +3,7 @@
+ # Every Debian-Source-Paket has one included.
+ include debian/huskymak.cfg
+ else
+-include ../huskymak.cfg
++include /usr/share/husky/huskymak.cfg
+ endif
+ 
+ SRC_DIR = src$(DIRSEP)

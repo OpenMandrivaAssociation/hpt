@@ -1,0 +1,11 @@
+--- hpt/doc/Makefile-old	Wed Apr 11 00:47:39 2001
++++ hpt/doc/Makefile	Sat May 18 03:33:05 2002
+@@ -2,7 +2,7 @@
+ # Every Debian-Source-Paket has one included.
+ include ../debian/huskymak.cfg
+ else
+-include ../../huskymak.cfg
++include /usr/share/husky/huskymak.cfg
+ endif
+ 
+ all: html info dvi
