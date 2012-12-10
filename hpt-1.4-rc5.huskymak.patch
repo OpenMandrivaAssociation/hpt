@@ -1,0 +1,25 @@
+--- hpt/doc/Makefile.huskymak	2005-06-03 22:00:00.000000000 +0400
++++ hpt/doc/Makefile	2012-11-06 19:46:04.840779796 +0400
+@@ -1,9 +1,5 @@
+-ifeq ($(DEBIAN), 1)
+ # Every Debian-Source-Paket has one included.
+ include /usr/share/husky/huskymak.cfg
+-else
+-include ../../huskymak.cfg
+-endif
+ 
+ all: html info dvi
+ 
+--- hpt/Makefile.huskymak	2006-04-22 17:01:35.000000000 +0400
++++ hpt/Makefile	2012-11-06 19:45:27.195779246 +0400
+@@ -1,10 +1,6 @@
+ # include Husky-Makefile-Config
+-ifeq ($(DEBIAN), 1)
+ # Every Debian-Source-Paket has one included.
+ include /usr/share/husky/huskymak.cfg
+-else
+-include ../huskymak.cfg
+-endif
+ 
+ SRC_DIR = src$(DIRSEP)
+ 

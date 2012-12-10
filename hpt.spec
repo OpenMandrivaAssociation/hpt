@@ -1,19 +1,21 @@
+%global debug_package %{nil}
 %define fver	1.4
 
 %define pre	rc5
-%define rel	2
+%define rel	1
 %define release	0.%{pre}.%{rel}
 
 Summary:	Highly Portable FTN Message Tosser
 Name:           hpt
 Version:        1.4.0
-Release:        %mkrel 0.%{pre}.%{rel}
+Release:        0.%{pre}.%{rel}
 License:	GPLv2+
 Group:		Networking/Other
-Source:		http://downloads.sourceforge.net/husky/%{name}-%{fver}-%{pre}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+Source0:		http://downloads.sourceforge.net/husky/%{name}-%{fver}-%{pre}.tar.gz
 Patch0:		hpt-20021015-main.patch
 Patch1:		hpt-20021015-doc.patch
+patch2:		hpt-1.4-rc5.huskymak.patch
+patch3:		hpt-1.4-rc5.printf.patch
 Requires:	fidoconf
 BuildRequires:	huskybse
 BuildRequires:	smapi-devel
@@ -40,23 +42,21 @@ Features of HPT:
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
-%patch1 -p1
+#% patch0 -p1
+#% patch1 -p1
+%patch2 -p1 -b .huskymak
+%patch3 -p1 -b .printf
 
 %build
-%make OPTCFLAGS=" -s -c -fPIC %{optflags}"
+%make OPTCFLAGS=" -c -fPIC %{optflags}"
 
 %install
-rm -rf %{buildroot}
 install -d %{buildroot}%{_bindir}
 make BINDIR=%{buildroot}%{_bindir} MANDIR=%{buildroot}%{_mandir} install
 make INFODIR=%{buildroot}%{_infodir} -C doc install
 rm -rf %{buildroot}%{_infodir}/dir
 install -d %{buildroot}%{_sysconfdir}/husky
 install -m 644 config/{config,path,links,areas,packer} %{buildroot}%{_sysconfdir}/husky
-
-%clean
-rm -rf %{buildroot}
 
 %post
 %_install_info %{name}.info
@@ -74,3 +74,37 @@ rm -rf %{buildroot}
 %dir %{_sysconfdir}/husky
 %config(noreplace) %{_sysconfdir}/husky/*
 
+
+
+%changelog
+* Sun Aug 24 2008 Adam Williamson <awilliamson@mandriva.com> 1.4.0-0.rc5.1mdv2009.0
++ Revision: 275520
+- don't assume .bz2 extension for .info files
+- new license policy
+- replace $RPM_* with %%{*
+- clean bracket use
+- remove unncessary defines
+- new prerelease 1.4.0-rc5
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - rebuild
+    - kill re-definition of %%buildroot on Pixel's request
+    - use %%mkrel
+    - import hpt
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+
+* Wed Dec 07 2005 Lenny Cartier <lenny@mandriva.com> 1.4.0-0.rc2.3mdk
+- rebuild
+
+* Thu Jan  8 2004 Olivier Thauvin <nanardon@klama.mandrake.org> 1.4.0-0.rc2.2mdk
+- Remove Requires: smapi 
+- Fix perms
+
+* Mon Dec 22 2003 Olivier Thauvin <thauvin@aerov.jussieu.fr> 1.4.0-0.rc2.1mdk 
+- cleanup
+- From Iouri Goussev <elendal@polygonized.com>
+  - First MDK version
+  - original SPEC by Sergey Zhemchugov <Sergey_Zhemchugov@p8.f822.n463.z2.fidonet.org>

@@ -1,0 +1,11 @@
+--- hpt/src/areafix.c.printf	2005-06-03 22:00:00.000000000 +0400
++++ hpt/src/areafix.c	2012-11-06 19:44:18.996780199 +0400
+@@ -1314,7 +1314,7 @@ char *info_link(s_link *link)
+     char Rsb[]="Reduced SEEN-BY: ";
+     unsigned int i;
+ 
+-    sprintf(linkAka,aka2str(link->hisAka));
++    sprintf(linkAka,"%s",aka2str(link->hisAka));
+     xscatprintf(&report, "Here is some information about our link:\r\r");
+     xscatprintf(&report, "%20s%s\r%20s%s\r%20s%s\r%20s",
+                 hisAddr, linkAka, ourAddr, aka2str(*link->ourAka),
