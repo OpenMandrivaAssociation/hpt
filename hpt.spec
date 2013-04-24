@@ -58,8 +58,6 @@ rm -rf %{buildroot}%{_infodir}/dir
 install -d %{buildroot}%{_sysconfdir}/husky
 install -m 644 config/{config,path,links,areas,packer} %{buildroot}%{_sysconfdir}/husky
 
-%post
-%_install_info %{name}.info
 
 %postun
 %_remove_install_info %{name}.info
