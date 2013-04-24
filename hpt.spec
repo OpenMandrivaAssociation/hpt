@@ -59,8 +59,6 @@ install -d %{buildroot}%{_sysconfdir}/husky
 install -m 644 config/{config,path,links,areas,packer} %{buildroot}%{_sysconfdir}/husky
 
 
-%postun
-%_remove_install_info %{name}.info
 
 %files
 %defattr(-,root,root)
