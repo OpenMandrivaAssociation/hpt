@@ -1,14 +1,11 @@
 %global debug_package %{nil}
 %define fver	1.4
-
 %define pre	rc5
-%define rel	1
-%define release	0.%{pre}.%{rel}
 
 Summary:	Highly Portable FTN Message Tosser
 Name:           hpt
 Version:        1.4.0
-Release:        0.%{pre}.%{rel}
+Release:        0.%{pre}.2
 License:	GPLv2+
 Group:		Networking/Other
 Source0:		http://downloads.sourceforge.net/husky/%{name}-%{fver}-%{pre}.tar.gz
@@ -61,7 +58,6 @@ install -m 644 config/{config,path,links,areas,packer} %{buildroot}%{_sysconfdir
 
 
 %files
-%defattr(-,root,root)
 %doc BUG-REPORTING BUGS COPYING CREDITS ChangeLog HISTORY INSTALL README TODO UPGRADE VERSION filter.pl config misc
 %doc doc/{bugreport.rus,bugreport.txt,faqfmt.pl,hpt-FAQ.russian,perlwin32.rus,perlwin32.txt}
 %attr(755,root,root) %{_bindir}/*
