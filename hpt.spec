@@ -18,7 +18,7 @@ BuildRequires:	huskybse
 BuildRequires:	smapi-devel
 BuildRequires:	fidoconf-devel
 BuildRequires:	texinfo
-URL:		http://sourceforge.net/projects/husky/
+URL:		https://sourceforge.net/projects/husky/
 
 %description
 HPT is a Fidonet message tosser and packer with areafix.
