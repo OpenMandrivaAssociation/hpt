@@ -14,6 +14,7 @@ Patch1:		hpt-20021015-doc.patch
 patch2:		hpt-1.4-rc5.huskymak.patch
 patch3:		hpt-1.4-rc5.printf.patch
 Requires:	fidoconf
+BuildRequires:	make
 BuildRequires:	huskybse
 BuildRequires:	smapi-devel
 BuildRequires:	fidoconf-devel
